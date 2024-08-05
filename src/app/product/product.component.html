@@ -3,7 +3,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3" *ngFor="let item of myarr">
+        <div class="col-sm-3" *ngFor="let item of myarr; index as idx">
             <div class="card p-2 m-2 shadow d-flex flex-wrap flex-column align-items-center py-3" style="width: 18rem;">
 
                 <img [src]="item.image" class="card-img-top img-responsive mb-2" style="height: 120px; width: 100px;" />
@@ -13,7 +13,8 @@
                     <p>Total Price: ${{item.price}}</p>
                     <p>Category: {{item.category}}</p>
                     <div class="d-block text-center">
-                        <a href="javascript:void(0)" class="btn btn-success btn-sm">Add to cart</a>
+                        <a href="javascript:void(0)" class="btn btn-success btn-sm" (click)="addtoCart(item)">Add to
+                            cart</a>
                     </div>
                 </div>
             </div>

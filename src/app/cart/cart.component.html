@@ -1,1 +1,34 @@
-<p>cart works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Image</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">SubTotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cartData  of parsedataarr">
+                        <td class="text-center"><img src="{{cartData.image}}" class="img img-responsive"
+                                style="height: 120px; width: 100px;" /></td>
+                        <td>{{cartData.category}}</td>
+                        <td>{{cartData.title}}</td>
+                        <td>{{cartData.price}}</td>
+                        <td>{{cartData.quantity}}</td>
+                        <td>{{cartData.quantity * cartData.price}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-end">Total :{{sum}} </h1>
+        </div>
+    </div>
+</div>
