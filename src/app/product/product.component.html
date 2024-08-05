@@ -1,0 +1,22 @@
+<div class="spinner-border" role="status" *ngIf="loader">
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let item of myarr">
+            <div class="card p-2 m-2 shadow d-flex flex-wrap flex-column align-items-center py-3" style="width: 18rem;">
+
+                <img [src]="item.image" class="card-img-top img-responsive mb-2" style="height: 120px; width: 100px;" />
+                <div class="card-body">
+                    <h5 class="card-title d-inline-block text-truncate" style="max-width: 200px;">{{item.title}}</h5>
+                    <!-- <p class="card-text fw-bold">{{item.id}}</p> -->
+                    <p>Price: ${{item.price}}</p>
+                    <p>Category: {{item.category}}</p>
+                    <div class="d-block text-center">
+                        <a href="javascript:void(0)" class="btn btn-success btn-sm">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
